@@ -9,8 +9,8 @@ app = FastAPI()
 def read_root():
         return {"message": "Hello, World!"}
 
-@app.get("/api/")
+@app.get("/api")
 def find_name(names: List[str] = Query(...)):
-    with open('name.json', mode='r') as file:
+    with open('names.json', mode='r') as file:
         data = json.load(file)
         return {"marks": [data.get(n) for n in names]}

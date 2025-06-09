@@ -13,4 +13,4 @@ def read_root():
 def find_name(names: List[str] = Query(...)):
     with open('name.json', mode='r') as file:
         data = json.load(file)
-        return {"marks": [data.get(n) for n in names]]}
+        return {"marks": [data.get(n) for n in names]}
